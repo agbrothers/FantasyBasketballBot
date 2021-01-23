@@ -10,6 +10,8 @@
   Please keep in mind that bot is still a work in progress and a lot of code has yet to be cleaned up / optimized.  
   That being said, it still works fully as intended on MacOS.  Let me know if you encounter and bugs / oversights.  
 
+
+
 # SETUP
   The bot utilizes chromedriver to connect and interact with espn.com. Downloads for chromedriver can be found here:
   https://sites.google.com/a/chromium.org/chromedriver/downloads
@@ -31,10 +33,10 @@
   enabling you to manually input the passcode into the console to log in.  This line is already commented out in the code for convenience.  
 
 
+
 # FUTURE FEATURES 
-   : Evaluate the weekly opponent's team, determine their optimal lineup for the week, predict their score, and calculate a probability of winning/losing.  
+   Evaluate the weekly opponent's team, determine their optimal lineup for the week, predict their score, and calculate a probability of winning/losing.  
 
-   : Suggest actions to take if the opponent has a higher probability of winning
+   Suggest actions to take if the opponent has a higher probability of winning
 
-   : Smarter algorithm for determining the optimal lineup (Potentially using a regression model to predict player performance per game).
-     The current decision making process is naive and only utilizes 7-day avg scores.  
+   Smarter algorithm for determining the optimal lineup (Potentially using a regression model to predict player performance per game).  The current decision making process is naive and only utilizes 7-day avg scores.  
