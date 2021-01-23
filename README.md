@@ -37,6 +37,6 @@
 # FUTURE FEATURES 
    Evaluate the weekly opponent's team, determine their optimal lineup for the week, predict their score, and calculate a probability of winning/losing.  
 
-   Suggest actions to take if the opponent has a higher probability of winning
+   Suggest actions to take if the opponent has a higher probability of winning.
 
    Smarter algorithm for determining the optimal lineup (Potentially using a regression model to predict player performance per game).  The current decision making process is naive and only utilizes 7-day avg scores.  
