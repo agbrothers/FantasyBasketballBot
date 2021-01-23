@@ -12,7 +12,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-
 class WebBot():
     """
     
@@ -35,8 +34,8 @@ class WebBot():
         if self.driver.current_url != url:
             self.driver.get(url)
             time.sleep(wait)    
-            
-
+          
+        
 
 class Eyes(WebBot):
     """
@@ -44,6 +43,8 @@ class Eyes(WebBot):
     The Eyes of the Bot
     -------
      : Superclass for the Fantasy Basketball Bot 
+     
+     : Inherits the WebBot Class
      
      : Contains Methods for reading data from ESPN's fantasy site
      
@@ -205,9 +206,11 @@ class Eyes(WebBot):
             games = games.split(' ')[1]
             games_played = int(games.split('/')[0])  
             max_games = int(games.split('/')[1])  
+            
         except Exception:
             games_played = 0
             max_games = np.inf
+            
         return games_played, max_games
     
     
@@ -345,6 +348,8 @@ class Limbs(Eyes):
     -------
      : Superclass for the Fantasy Basketball Bot 
      
+     : Inherits the Eyes Class
+     
      : Contains methods for interacting with page elements
        
      : Executes instructions to move players
@@ -419,13 +424,16 @@ class FantasyBasketballBot(Limbs):
     
     The Brain of the Bot
     -------     
+     : Inherits the Limbs Class
+    
      : Contains decision making methods for setting lineups based on the current matchup
       
     """
     
     # super(MyModel, self).__init__()
     def __init__(self, username, password, team_url):
-        Limbs.__init__(self, username, password, team_url)        
+        Limbs.__init__(self, username, password, team_url) 
+        self.get_matchup()
     
     
     def _get_lineup(self, players):
@@ -531,13 +539,11 @@ class FantasyBasketballBot(Limbs):
         
 if __name__ == '__main__':
     
-    credentials = pd.read_csv('espn_login.csv')
-    username = credentials.loc[0,'un']
-    password = credentials.loc[0,'pw']
-    team_url = credentials.loc[0,'team_urls'] 
+    # Example login credentials, replace these with your own.  
+    username = 'name@gmail.com'
+    password = 'password123'
+    team_url = 'https://fantasy.espn.com/basketball/team?leagueId=12345678&seasonId=2021&teamId=1'
 
-
-    bot = FantasyBasketballBot(username, password, team_url)    
-    bot.get_matchup()
-    
+    # The bot will set the week's lineup upon initialization
+    bot = FantasyBasketballBot(username, password, team_url)        
             
