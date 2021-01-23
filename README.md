@@ -6,6 +6,9 @@
   The code is organized into two modules, (FantasyBasketballBot.py) containing classes that make up the bot, 
   and (otp.py) containing methods for retrieving one-time-passcodes from the gmail account linked to the user's 
   espn account utilizing the gmail API.
+  
+  Please keep in mind that bot is still a work in progress and a lot of code has yet to be cleaned up / optimized.  
+  That being said, it still works fully as intended on MacOS.  Let me know if you encounter and bugs / oversights.  
 
 # SETUP
   The bot utilizes chromedriver to connect and interact with espn.com. Downloads for chromedriver can be found here:
