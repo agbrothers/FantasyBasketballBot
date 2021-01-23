@@ -15,8 +15,7 @@ Modules for fetching One Time Passwords sent to a gmail account from various web
 -------
 Supported Sites:
     ESPN
-    Robinhood
-    Twitch
+    Twitch.tv
 
 """
 
@@ -189,32 +188,6 @@ def get_espn(user_id):
     OTP = re.findall('>\d{6}<', most_recent)[0][1:-1]
 
     return OTP
-
-
-
-def get_robinhood(user_id):
-    """
-    
-    Get the most recent ESPN One Time Passcode from the specified gmail inbox
-    -------
-    
-    """
-    sender = 'from:support@espn.com'
-    subject = 'subject:Your ESPN Account Passcode'
-    time = 'newer:'
-    
-    service = get_service()
-    
-    ids = search_message(service, user_id, subject)
-    
-    msgs = []
-    for msg_id in ids:
-        msgs.append(get_message(service, user_id, msg_id))
-    
-    raw_msg = msgs[0]
-    OTP = re.findall('>\d{6}<', raw_msg)[0][1:-1]
-    return OTP
-
 
 
 def get_twitch(user_id):
