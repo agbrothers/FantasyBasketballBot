@@ -18,9 +18,11 @@
   
   To get personal credentials for the gmail API and to authorize this program to access gmail, follow the steps at the following link:
   https://developers.google.com/gmail/api/quickstart/python
+  
+  Following the instructions there will generate a "credentials.json" file which you should place in the same directory as the files in this repository.
 
-  Alternatively, if you don't want to give the program email access, or if you have trouble getting the gmail API setup, or if your ESPN account 
-  isn't linked to a gmail account, you can modify the code in FantasyBasketballBot.py > Eyes class > _login function to enable manual logins.
+  Alternatively, if you don't want to give the program gmail access, if you have trouble getting the gmail API setup, or if your ESPN account 
+  isn't linked to a gmail account, you can modify the code to enable manual logins within FantasyBasketballBot.py > Eyes class > _login method
 
   To do this you can remove the line: 
 
