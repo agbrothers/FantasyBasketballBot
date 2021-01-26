@@ -115,12 +115,16 @@ class Eyes(WebBot):
             pw_element.send_keys(Keys.ENTER)
             
             # Get the One Time Password from the given gmail account to login
-            time.sleep(20)
-            one_time_passcode = otp.get_espn(user_id=self.un)
-            otp_element = self.driver.find_element_by_xpath('//input[@name="code"]')
-            otp_element.send_keys(one_time_passcode)
-            otp_element.send_keys(Keys.ENTER)
-            time.sleep(5)            
+            try:
+                time.sleep(20)
+                one_time_passcode = otp.get_espn(user_id=self.un)
+                # one_time_passcode = input(f'Please enter the one-time-passcode sent to {self.un}')
+                otp_element = self.driver.find_element_by_xpath('//input[@name="code"]')
+                otp_element.send_keys(one_time_passcode)
+                otp_element.send_keys(Keys.ENTER)
+                time.sleep(5)     
+            except Exception:
+                return      
             
         except Exception:
             sys.exit(f'Error: There was an issue logging in to {self.login_url}.  Please check the credentials provided and retry.')
