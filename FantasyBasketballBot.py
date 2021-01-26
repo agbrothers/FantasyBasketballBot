@@ -122,9 +122,9 @@ class Eyes(WebBot):
                 otp_element = self.driver.find_element_by_xpath('//input[@name="code"]')
                 otp_element.send_keys(one_time_passcode)
                 otp_element.send_keys(Keys.ENTER)
-                time.sleep(5)     
             except Exception:
                 return      
+            time.sleep(5)     
             
         except Exception:
             sys.exit(f'Error: There was an issue logging in to {self.login_url}.  Please check the credentials provided and retry.')
