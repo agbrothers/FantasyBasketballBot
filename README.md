@@ -19,7 +19,7 @@
   
   Following the instructions there will generate a "credentials.json" file which you should place in the same directory as the files in this repository.
 
-  Alternatively, if you don't want to give the program gmail access, if you have trouble getting the gmail API setup, or if your ESPN account 
+  Alternatively if you don't want to give the program gmail access, if you have trouble getting the gmail API setup, or if your ESPN account 
   isn't linked to a gmail account, you can modify the code to enable manual logins within FantasyBasketballBot.py > Eyes class > _login method
 
   To do this you can remove the line: 
