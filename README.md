@@ -1,7 +1,5 @@
 # FantasyBasketballBot
-  This is a bot I built to automate retrieving stats, making roster decisions, and setting my lineup for weekly matchups.  
-  This code fully automates the entire process from logging in to actually moving players into the correct positions to 
-  optimize weekly points.  
+  This is a bot I built to automate retrieving stats, making roster decisions, and setting my lineup for weekly matchups.  This code fully automates the entire process from logging in to actually moving players into the correct positions to optimize weekly points.  
 
   The code is organized into two modules, (FantasyBasketballBot.py) containing classes that make up the bot, 
   and (otp.py) containing methods for retrieving one-time-passcodes from the gmail account linked to the user's 
